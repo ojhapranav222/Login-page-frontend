@@ -1,0 +1,255 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+    height: 100vh;
+}
+
+.uni-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.header{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+ .header h1{
+    letter-spacing: 5px;
+}
+
+.container{
+    position: relative;
+    height: 500px;
+    width: 850px;
+    box-shadow: 25px 30px 50px #102C57;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #FFF8C9;
+}
+
+.form-container{
+    position: absolute;
+    width: 60%;
+    transform: translateX(-9%);
+    height: 100%;
+    padding: 0px 40px;
+    transition: all 0.5 ease-in-out;
+}
+
+.register-container{
+    z-index: 1;
+    opacity: 0;
+    
+}
+
+.login-container{
+    z-index: 2;
+}
+
+form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;
+}
+
+.container h1{
+    font-weight: 600;
+    color: #9764e4;
+}
+
+.infield{
+    position: relative;
+    margin: 10px 0px;
+    width: 100%;
+    display: inline-flex;
+}
+
+.address{
+    border: 2px solid #BEADFA;
+    border-top: 0px;
+}
+
+input{
+    width: 100%;
+    padding: 15px 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #BEADFA;
+}
+
+label{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(45deg, #BEADFA, #D0BFFF, #9764e4);
+    transition: 0.5s ease-in-out;
+}
+
+input:focus ~ label{
+    width: 100%;
+}
+
+.forgot{
+    color: #9764e4;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #9764e4;
+}
+
+.form-container button{
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    color: #D0BFFF;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: 0.2s ease-in;
+}
+
+.form-container button:hover{
+    background-color: #D0BFFF;
+    border: none;
+    color: #FFF8C9;
+}
+
+.text-container{
+    position: absolute;
+    top: 0px;
+    left: 60%;
+    height: 100%;
+    width: 40%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.text{
+    position: relative;
+    background: linear-gradient(45deg, #BEADFA, #D0BFFF, #9764e4);
+    color: #fff8c9;
+    left: -150%;
+    height: 100%;
+    width: 250%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.text-panel{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 40px;
+    height: 100%;
+    width: 40%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.text-left{
+    width: 40%;
+    right: 60%;
+    width: 300px;
+}
+
+.text-right{
+    right: 0;
+    transform: translateX(6%);
+    width: 300px;
+}
+
+.text-panel h1{
+    color: #FFF8C9;
+}
+
+p{
+    position: relative;
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin: 25px 0px 35px;
+}
+
+.text-container button{
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    color: #fff8c9;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.2s ease-in;
+}
+
+.text-container button:hover{
+    background-color: #FFF8C9;
+    border: none;
+    color: #D0BFFF;
+}
+@keyframes show{
+    0%, 50%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.right-panel-active .text-container{
+    transform: translateX(-150%);
+}
+
+.right-panel-active .text{
+    transform: translateX(50%);
+}
+
+.right-panel-active .text-left{
+    transform: translateX(25%);
+}
+.right-panel-active .login-container{
+    transform: translateX(20%);
+    opacity: 0;
+}
+.right-panel-active .register-container{
+    transform: translate(50%, -5%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.5s;
+}
+
+.right-panel-active .register-container form h1{
+    padding-top: 35px;
+}
+
+.right-panel-active .register-container .code{
+    width: 43.3%;
+    border-right: 2px solid #D0BFFF;
+}
+
+footer{
+    margin-top: 50px;
+    margin-left: 50px;
+}
